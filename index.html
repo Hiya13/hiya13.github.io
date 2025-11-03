@@ -3,126 +3,495 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hiya Chowdhry | Portfolio</title>
+  <meta name="description" content="Hiya Chowdhry - Software Developer & UI/UX Designer | NIT Jalandhar">
+  <title>Hiya Chowdhry | Software Developer Portfolio</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
-
+    
     body {
-      background: linear-gradient(135deg, #e0f2fe, #fef9c3);
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
       color: #1e293b;
+      line-height: 1.6;
+    }
+    
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      z-index: 100;
+      padding: 1rem 0;
+    }
+    
+    nav ul {
       display: flex;
       justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .container {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      max-width: 750px;
-      width: 90%;
-      padding: 40px;
-      text-align: center;
-      animation: fadeIn 1.5s ease;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      color: #0f172a;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      color: #2563eb;
-      margin-top: 30px;
-      font-size: 1.3rem;
-    }
-
-    p, li {
-      color: #475569;
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-
-    ul {
+      gap: 2rem;
       list-style: none;
-      margin-top: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    a {
-      color: #2563eb;
+    
+    nav a {
       text-decoration: none;
-      transition: color 0.2s ease;
+      color: #475569;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-size: 0.95rem;
     }
-
-    a:hover {
-      color: #1d4ed8;
+    
+    nav a:hover {
+      color: #2563eb;
     }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      border-radius: 25px;
-      background: linear-gradient(135deg, #3b82f6, #9333ea);
+    
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      scroll-margin-top: 80px;
+    }
+    
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
+      padding: 8rem 2rem 5rem;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.8s ease;
+    }
+    
+    .hero .tagline {
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+      opacity: 0.95;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+    
+    .hero .subtitle {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease 0.6s both;
+    }
+    
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: all 0.3s;
+      display: inline-block;
+      font-size: 1rem;
     }
-
-    .btn:hover {
+    
+    .btn-primary {
+      background: white;
+      color: #667eea;
+    }
+    
+    .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #0f172a;
+      text-align: center;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      color: #64748b;
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+    
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #475569;
+      text-align: center;
+    }
+    
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .highlight-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .highlight-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .highlight-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .highlight-card h3 {
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .skill-category {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    
+    .skill-category h3 {
+      color: #2563eb;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .skill-tag {
+      background: #eff6ff;
+      color: #1e40af;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .projects-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 2rem;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 1rem;
+    }
+    
+    .project-card h3 {
+      color: #1e293b;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .tech-badge {
+      background: #f1f5f9;
+      color: #475569;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    
+    .contact-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    
+    .contact-link:hover {
+      color: #1d4ed8;
+    }
+    
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero .tagline {
+        font-size: 1.2rem;
+      }
+      
+      nav ul {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+      
+      section {
+        padding: 3rem 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Hiya Chowdhry</h1>
-    <p>B.Tech IT | NIT Jalandhar</p>
-
-    <h2>About Me</h2>
-    <p>Driven by curiosity and creativity, I love crafting clean, user-friendly software.  
-    Excited about UI/UX design, scalable systems, and solving impactful problems at startups.</p>
-
-    <h2>Skills</h2>
-    <p>React · Python · SQL · Machine Learning · UI/UX Design</p>
-
-    <h2>Projects</h2>
+  <nav>
     <ul>
-      <li><b>Skill Gap Analyzer</b> – Web app for analyzing and mapping skill sets.</li>
-      <li><b>Emotion Detector (GCN-based)</b> – Brain-signal-driven emotion recognition (90% accuracy).</li>
-      <li><b>Mock Interview App</b> – AI-powered interview practice platform.</li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+  </nav>
 
-    <h2>Contact</h2>
-    <p>
-      📧 <a href="mailto:chowdhryhiya@gmail.com">chowdhryhiya@gmail.com</a><br>
-      🔗 <a href="https://linkedin.com/in/hiyachowdhry" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/Hiya13" target="_blank">GitHub</a>
-    </p>
+  <section id="home" class="hero">
+    <div>
+      <h1>Hiya Chowdhry</h1>
+      <p class="tagline">Software Developer & UI/UX Designer</p>
+      <p class="subtitle">B.Tech IT | NIT Jalandhar | 2026 Graduate</p>
+      <div class="cta-buttons">
+        <a href="https://drive.google.com/file/d/1DseUZxAHLs6Qc3knHrYlqKKXBX7lsxgx/view?usp=drivesdk" class="btn btn-primary" target="_blank">View Resume</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
 
-    <a href="https://drive.google.com/file/d/1DseUZxAHLs6Qc3knHrYlqKKXBX7lsxgx/view?usp=drivesdk" class="btn" target="_blank">View Resume</a>
-  </div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="section-subtitle">Building innovative solutions with clean code and thoughtful design</p>
+    <div class="about-content">
+      <p>I'm a final-year IT student at NIT Jalandhar with a passion for creating impactful software solutions. I specialize in full-stack development and UI/UX design, with experience in machine learning and building scalable applications. I thrive in fast-paced startup environments where I can contribute to meaningful products.</p>
+    </div>
+    <div class="about-highlights">
+      <div class="highlight-card">
+        <div class="highlight-icon">🎓</div>
+        <h3>Education</h3>
+        <p>B.Tech in IT<br>NIT Jalandhar<br>Class of 2026</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">💡</div>
+        <h3>Focus Areas</h3>
+        <p>Full-Stack Development<br>UI/UX Design<br>Machine Learning</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🚀</div>
+        <h3>Interests</h3>
+        <p>Startup Culture<br>Product Development<br>User-Centric Design</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <p class="section-subtitle">Technologies I work with</p>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Frontend Development</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">Responsive Design</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Backend & Database</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Database Design</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>AI/ML & Design</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">UI/UX Design</span>
+          <span class="skill-tag">Prototyping</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <p class="section-subtitle">Recent work and technical implementations</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <h3>Skill Gap Analyzer</h3>
+            <p>A comprehensive web application that analyzes user skill sets against industry requirements and provides personalized learning roadmaps. Features intelligent skill mapping and visualization dashboards.</p>
+          </div>
+        </div>
+        <div class="project-tech">
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">SQL</span>
+          <span class="tech-badge">Data Visualization</span>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <h3>Emotion Detector (GCN-based)</h3>
+            <p>Deep learning model for emotion recognition from EEG brain signals using Graph Convolutional Networks. Achieved 90% accuracy in classifying emotional states, published research findings.</p>
+          </div>
+        </div>
+        <div class="project-tech">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Deep Learning</span>
+          <span class="tech-badge">GCN</span>
+          <span class="tech-badge">TensorFlow</span>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <h3>AI Mock Interview Platform</h3>
+            <p>Interactive interview practice platform powered by AI that provides real-time feedback on responses, body language, and communication skills. Helps candidates prepare for technical and behavioral interviews.</p>
+          </div>
+        </div>
+        <div class="project-tech">
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">AI/ML</span>
+          <span class="tech-badge">Speech Recognition</span>
+          <span class="tech-badge">NLP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Let's Connect</h2>
+    <p class="section-subtitle">Open to opportunities and collaborations</p>
+    <div class="contact-content">
+      <p>I'm currently seeking full-time opportunities in software development and UI/UX design. Feel free to reach out for collaborations, opportunities, or just to connect!</p>
+      <div class="contact-links">
+        <a href="mailto:chowdhryhiya@gmail.com" class="contact-link">
+          📧 Email
+        </a>
+        <a href="https://linkedin.com/in/hiyachowdhry" class="contact-link" target="_blank">
+          💼 LinkedIn
+        </a>
+        <a href="https://github.com/Hiya13" class="contact-link" target="_blank">
+          💻 GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Hiya Chowdhry. Built with passion and code.</p>
+  </footer>
 </body>
 </html>
